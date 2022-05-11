@@ -63,4 +63,15 @@ export class FilmDetailsComponent implements OnInit {
       return 'no data of the number of votes';
     }
   }
+
+  /**
+   * returns the backdrop image or a placeholder
+   * @returns url to a picture
+   */
+  Poster() {
+    if (this.film.poster_path != undefined)
+      return this.pictureurl + this.film.poster_path;
+
+    return 'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png';
+  }
 }
