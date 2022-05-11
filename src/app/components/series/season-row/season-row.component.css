@@ -1,0 +1,14 @@
+.cast-title {
+  margin-top: 40px;
+  font-size: 3rem;
+  line-height: 4rem;
+  text-align: center;
+  border-radius: 1rem;
+  background-color: #777;
+}
+
+.episodes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

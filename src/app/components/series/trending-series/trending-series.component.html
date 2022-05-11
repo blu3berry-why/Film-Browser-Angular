@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="content">
+    <div *ngFor="let series of this.searchResult?.results">
+      <app-series-search-row [series]="series"></app-series-search-row>
+    </div>
+  </div>
+</div>

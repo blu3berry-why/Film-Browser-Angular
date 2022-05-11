@@ -1,0 +1,22 @@
+button {
+  border: #00000000;
+  background-color: #00000000;
+  color: #00000000;
+  padding: none;
+  margin-top: 5px;
+}
+
+.mat-card {
+  width: 400px;
+}
+
+.rating {
+  font-size: 1.3rem;
+}
+
+.mat-card-title {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

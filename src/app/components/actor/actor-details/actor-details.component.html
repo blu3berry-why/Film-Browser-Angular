@@ -1,0 +1,46 @@
+<div class="container">
+  <mat-card *ngIf="this.actor != undefined">
+    <main>
+      <img [src]="Poster()" alt="film poster" />
+      <section class="film-details">
+        <header>
+          <div class="row">
+            <h1 class="title">{{ this.actor.name }}</h1>
+            <div class="rating">🏆{{ actor.popularity }}</div>
+          </div>
+          <h4>{{ this.actor.known_for_department ?? "" }}</h4>
+          <div matCardSubtitle class="">
+            <p>also known as:</p>
+
+            <h2 class="subtitle" *ngFor="let name of actor.also_known_as">
+              {{ name }}
+            </h2>
+          </div>
+          <div class="tags">
+            <mat-chip-list aria-label="Fish selection">
+              <mat-chip *ngIf="actor.gender == 1"> Female </mat-chip>
+              <mat-chip *ngIf="actor.gender == 2"> Male </mat-chip>
+            </mat-chip-list>
+          </div>
+        </header>
+        <article>
+          <p class="overview-heading">Overview :</p>
+
+          <p class="overview">
+            Place of birth: {{ this.actor.place_of_birth ?? "Not provided" }}
+          </p>
+          <p class="overview">
+            Birthday : {{ this.actor.birthday ?? "Not provided" }}
+          </p>
+        </article>
+      </section>
+    </main>
+    <section></section>
+    <footer>
+      <p class="cast-title">Biography</p>
+      <div class="cast">
+        {{ actor.biography }}
+      </div>
+    </footer>
+  </mat-card>
+</div>

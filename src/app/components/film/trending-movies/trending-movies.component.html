@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="content">
+    <div *ngFor="let film of this.searchResult?.results">
+      <app-film-search-row [film]="film"></app-film-search-row>
+    </div>
+  </div>
+</div>

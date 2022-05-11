@@ -1,0 +1,51 @@
+<div class="container">
+  <mat-card *ngIf="this.film != undefined">
+    <main>
+      <img [src]="pictureurl + this.film.poster_path" alt="film poster" />
+      <section class="film-details">
+        <header>
+          <div class="row">
+            <h1 class="title">{{ this.film.title }}</h1>
+            <div class="rating">
+              {{ getRating() }}
+            </div>
+          </div>
+          <div
+            matCardSubtitle
+            class="row"
+            *ngIf="this.film.original_title != undefined"
+          >
+            <h2 class="subtitle">( {{ this.film.original_title }} )</h2>
+            <h4>{{ this.film.original_language ?? "" }}</h4>
+          </div>
+
+          <div class="tags">
+            <mat-chip-list aria-label="Fish selection">
+              <mat-chip *ngFor="let genre of this.film.genres">{{
+                genre.name
+              }}</mat-chip>
+            </mat-chip-list>
+          </div>
+        </header>
+        <article>
+          <p class="overview-heading">Overview :</p>
+          <p class="overview">{{ this.film.overview ?? "Not provided" }}</p>
+        </article>
+        <footer>
+          <h3 class="release-date">
+            Release date: {{ this.film.release_date ?? "Not provided" }}
+          </h3>
+        </footer>
+      </section>
+    </main>
+    <section></section>
+    <footer>
+      <p class="cast-title">Cast</p>
+      <div class="cast">
+        <div *ngFor="let actor of credits?.cast">
+          <app-actor-row [actor]="actor"></app-actor-row>
+        </div>
+      </div>
+    </footer>
+  </mat-card>
+</div>

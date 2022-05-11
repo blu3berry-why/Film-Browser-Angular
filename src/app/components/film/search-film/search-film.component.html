@@ -1,0 +1,53 @@
+<div *ngIf="this.searchResult == undefined" class="start">
+  <div>
+    <p class="movies">Movies</p>
+    <form
+      action=""
+      class="search-bar"
+      [formGroup]="form"
+      (submit)="getFilms(this.form.value.queryString)"
+    >
+      <input
+        type="search"
+        name="search"
+        pattern=".*\S.*"
+        required
+        formControlName="queryString"
+      />
+      <button class="search-btn" type="submit">
+        <span>Search</span>
+      </button>
+    </form>
+  </div>
+</div>
+<div class="container">
+  <div *ngIf="this.searchResult != undefined" class="result-arrived">
+    <form
+      action=""
+      class="search-bar"
+      [formGroup]="form"
+      (submit)="getFilms(this.form.value.queryString)"
+    >
+      <input
+        type="search"
+        name="search"
+        pattern=".*\S.*"
+        required
+        formControlName="queryString"
+      />
+      <button class="search-btn" type="submit">
+        <span>Search</span>
+      </button>
+    </form>
+    <div class="content">
+      <div *ngFor="let film of this.searchResult.results">
+        <app-film-search-row [film]="this.film"></app-film-search-row>
+      </div>
+    </div>
+    <div class="bottom-navigator">
+      <button (click)="getPreviousPage()"><</button>
+      <p>{{ searchResult.page }} / {{ searchResult.total_pages }}</p>
+      <button (click)="getNextPage()">></button>
+    </div>
+  </div>
+</div>

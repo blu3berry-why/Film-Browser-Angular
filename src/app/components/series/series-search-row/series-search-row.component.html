@@ -1,0 +1,12 @@
+<button (click)="onClick()">
+  <mat-card>
+    <mat-card-title>{{ series.name }}</mat-card-title>
+    <img mat-card-image [src]="getPreview()" height="243" />
+    <mat-card-content>
+      <p class="rating">Rating :{{ getRating() }}</p>
+      <p>
+        {{ getVoteCount() }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</button>

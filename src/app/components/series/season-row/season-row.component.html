@@ -1,0 +1,6 @@
+<p class="cast-title">{{ season.season_number }}. {{ season.name }}</p>
+<div class="episodes">
+  <app-episode-row *ngFor="let episode of seasonDetails?.episodes"
+    [episode]="episode"
+  ></app-episode-row>
+</div>
